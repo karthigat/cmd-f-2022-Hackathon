@@ -17,7 +17,8 @@ export class EditFoodModal extends Component{
             },
             body:JSON.stringify({
                 FoodID:event.target.FoodID.value,
-                FoodName:event.target.FoodName.value
+                FoodName:event.target.FoodName.value,
+                
             })
         })
         .then(res=>res.json())
@@ -51,6 +52,7 @@ centered
                             <Form.Control type="text" name="FoodName" required
                             placeholder="FoodName"/>
                         </Form.Group>
+
                         <Form.Group>
                             <Button variant="primary" type="submit">
                                 Add Food

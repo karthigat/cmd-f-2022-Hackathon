@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Modal, Button, Row, Col, Form} from 'react-bootstrap';
 
 export class AddFoodModal extends Component{
-    constructor(promps){
+    constructor(props){
         super(props);
         this.handleSubmit=this.handleSubmit.bind(this);
     }
@@ -17,7 +17,9 @@ export class AddFoodModal extends Component{
             },
             body:JSON.stringify({
                 FoodID:null,
-                FoodName:event.target.FoodName.value
+                FoodName:event.target.FoodName.value,
+                FoodDatePurchased:event.target.FoodDatePurchased.value,
+                FoodQuantity:event.target.FoodQuantity
             })
         })
         .then(res=>res.json())
@@ -30,9 +32,8 @@ export class AddFoodModal extends Component{
     }
     render(){
         return (
-            <div className="container"><
-<Modal
-{...this.props}
+            <div className="container">
+<Modal{...this.props}
 size="lg"
 aria-labelledby="contained-modal-title-vcenter"
 centered
@@ -56,7 +57,35 @@ centered
                                 Add Food
                             </Button>
                         </Form.Group>
+
                     </Form>
+
+                    <Form onSubmit={this.handleSubmit}>
+                    <Form.Group FoodDatePurchased="FoodDatePurchased">
+                            <Form.Label>FoodDatePurchased</Form.Label>
+                            <Form.Control type="text" name="FoodDatePurchased" required
+                            placeholder="FoodDatePurchased"/>
+                        </Form.Group>
+                        <Form.Group>
+                            <Button variant="primary" type="submit">
+                                Add purchase date
+                            </Button>
+                        </Form.Group>
+                        </Form>
+
+                    <Form onSubmit={this.handleSubmit}>
+                     <Form.Group FoodQuantity="FoodQuantity">
+                            <Form.Label>FoodQuantity</Form.Label>
+                            <Form.Control type="text" name="FoodQuantity" required
+                            placeholder="FoodQuantity"/>
+                        </Form.Group>
+                        <Form.Group>
+                            <Button variant="primary" type="submit">
+                                Add quantity
+                            </Button>
+                        </Form.Group>
+                        </Form>
+
                 </Col>
             </Row>
         </Modal.Body>
@@ -64,7 +93,7 @@ centered
         <Modal.Footer>
             <Button variant="danger" onClick={this.props.onHide}>Close</Button>
         </Modal.Footer>
-        </Modal>
+</Modal>
         </div>
 
 

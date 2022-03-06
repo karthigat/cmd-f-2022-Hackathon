@@ -7,7 +7,7 @@ export class Navigation extends Component{
     render(){
         return(
         <Navbar bg="dark" expand="lg">
-            <Navbar.Toggle aria-controls="basic-navbar-nav"
+            <Navbar.Toggle aria-controls="basic-navbar-nav">
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav>
             <NavLink className="d-inline p-2 bg-dark text-white" to="/">
@@ -22,6 +22,7 @@ export class Navigation extends Component{
 
             </Nav>
             </Navbar.Collapse>
+            </Navbar.Toggle>
         </Navbar>
         )
     }

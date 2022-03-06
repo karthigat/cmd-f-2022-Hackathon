@@ -8,12 +8,11 @@ export class Food extends Component{
     constructor(props){
         super(props);
         this.state={foods:[], AddFoodModal:false}
-
     }
 
     refreshList(){ 
-        fetch(process.env.REACT_APP_API+'food')
-        .then(response=>Rrsponse.json())
+        fetch("http://localhost:8000/api/get_recipes")
+        .then(response=>Response.json())
         .then(date=>{
             this.setState({foods: data});
         })
@@ -57,8 +56,9 @@ export class Food extends Component{
             Add Food</Button>
 
             <AddFoodModal show ={this.state.addModalShow}
-            onHide={addModalClose}
-        </ButtonToolbar>
+            onHide={addModalClose}>
+            </AddFoodModal>
+         </ButtonToolbar>
       </div>
         )
     }
