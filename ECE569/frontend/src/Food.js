@@ -7,7 +7,7 @@ export class Food extends Component{
 
     constructor(props){
         super(props);
-        this.state={foods:[]}
+        this.state={foods:[], AddFoodModal:false}
 
     }
 
@@ -29,24 +29,37 @@ export class Food extends Component{
 
     render(){
         const {foods}=this.state;
+        let AddFoodModal=()=>this.setState({addModalShow:false});
         return(
-        <div foodName="mt-4" striped bordered hover size="med">
-            <thread>
+        <div>
+            <Table foodName="mt-4" striped bordered hover size="med">
+            <thead>
                 <tr>FoodName</tr>
                 <tr>FoodQuantity</tr>
                 <tr>DatePurchased</tr>
                 <tr>Options</tr>
-            </thread>
+            </thead>
             <tbody>
                 {foods.map(food=>
-                    <tr key={food.foodName}>
+                     <tr key={food.foodName}>
                         <td>{food.foodQuantity}</td>
                         <td>{food.datePurchased}</td>
                         <td>Edit / Delete</td>
 
                     </tr>)}
             </tbody>
-        </div>
+
+        </Table>
+
+        <ButtonToolbar>
+            <Button variant='primary'
+            onClick={()=>this.setState({addModalShow:true})}>
+            Add Food</Button>
+
+            <AddFoodModal show ={this.state.addModalShow}
+            onHide={addModalClose}
+        </ButtonToolbar>
+      </div>
         )
     }
 } 

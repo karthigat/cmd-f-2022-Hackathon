@@ -4,6 +4,7 @@ import {Modal, Button, Row, Col, Form} from 'react-bootstrap';
 export class AddFoodModal extends Component{
     constructor(promps){
         super(props);
+        this.handleSubmit=this.handleSubmit.bind(this);
     }
 
     handleSubmit(event) {
@@ -20,12 +21,12 @@ export class AddFoodModal extends Component{
             })
         })
         .then(res=>res.json())
-        .then(result)=>{
+        .then((result)=>{
             alert(result);
         },
         (error)=>{
             alert('Failed');
-        }
+        })
     }
     render(){
         return (
