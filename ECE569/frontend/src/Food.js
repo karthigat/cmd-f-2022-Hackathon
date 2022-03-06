@@ -11,8 +11,14 @@ export class Food extends Component{
     }
 
     refreshList(){ 
+<<<<<<< HEAD
         fetch("http://localhost:8000/api/get_recipes")
         .then(response=>Response.json())
+=======
+        //fetch(process.env.REACT_APP_API+'food')
+        fetch("http://localhost:8000/api/get_recipes")
+        .then(response=>Rrsponse.json())
+>>>>>>> dae027480195cb70818f0e9fcb64b30a9cde8ea7
         .then(date=>{
             this.setState({foods: data});
         })
