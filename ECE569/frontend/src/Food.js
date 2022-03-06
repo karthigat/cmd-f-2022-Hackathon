@@ -9,7 +9,8 @@ export class Food extends Component{
     }
 
     refreshList(){ 
-        fetch(process.env.REACT_APP_API+'food')
+        //fetch(process.env.REACT_APP_API+'food')
+        fetch("http://localhost:8000/api/get_recipes")
         .then(response=>Rrsponse.json())
         .then(date=>{
             this.setState({foods: data});
