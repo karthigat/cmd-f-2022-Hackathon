@@ -6,7 +6,7 @@ export class Recipe extends Component{
 
     constructor(props){
         super(props);
-        this.state={items:[], AddFoodModal:false}
+        this.state={items:[]}
     }
 
     componentDidUpdate(){
@@ -15,7 +15,7 @@ export class Recipe extends Component{
 
     getFoodItems(){
         fetch("http://localhost:8000/api/get_recipes")
-        .then(response=>Rrsponse.json())
+        .then(response=>Response.json())
         .then(data=>{
             this.setState({items: data});
         })
@@ -39,7 +39,7 @@ export class Recipe extends Component{
         fetch()     //////////////////
         .then(response=>Response.json())
         .then(date=>{
-            this.setState({recipes: data});
+            this.setState({items: data});
         })
     }
 
