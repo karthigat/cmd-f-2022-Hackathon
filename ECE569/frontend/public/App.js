@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 
 import {Home} from './Home'
 import {Food} from './Food'
-import {Recipe} from './Recipe'
+import {Recipe} from './get_recipes'
 import {Navigation} from './Navigation'
 
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
@@ -22,7 +21,7 @@ function App() {
        <Switch>
          <Route path='/' component={Home} exact/>
          <Route path='/food' component={Food}/>
-         <Route path='/recipe' component={Recipe}/>
+         <Route path='/get_recipes' component={Recipe}/>
        </Switch>
 
       </div>
