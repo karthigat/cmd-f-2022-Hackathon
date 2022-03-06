@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+{% block content %}  
+
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <h1>Welcome to the ECE569 IoT Project</h1>
+            <br>
+            <br>
+
+          <!--Simple Form-->
+          <h2 class="my-4">Upload a file</h2>
+          
+            <!-- <br> -->
+            <!-- {% if city == "True" %} -->
+
+              <form method="post", enctype="multipart/form-data">
+                <p>Enter your city name : </p><input value="ingredient" name="ingredient" type="text" size="3" >
+                {% csrf_token %}
+              </form>
+              <!-- <input type="file" name="upload" > -->
+              <!-- <p>Enter your city name : </p><input value="city" name="city" type="text" size="3" > -->
+              <!-- <br>
+              <br>
+              <input type="submit" name="get" value="submit to local">
+              <br>
+              <br>
+              <input type="submit" name="get" value="submit to cloud"> -->
+              <!-- <button class="btn btn-dark my-4" value="local" name="msg" type="submit">Submit to local</button>
+              <br>
+              <button class="btn btn-dark my-4" value="cloud" name="msg" type="submit">Submit to cloud</button> -->
+            <!-- </form> -->
+          <!-- {% endif %} -->
+          <!-- {% if city != "True" %} -->
+            <!-- <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+                   <input type="file" name="upload" >
+                   <br>
+                   <br> -->
+  
+                  <!-- <br>
+                   <button class="btn btn-dark my-4" value="local" name="msg" type="submit">Submit to local</button>
+                   <br>
+                   <button class="btn btn-dark my-4" value="cloud" name="msg" type="submit">Submit to cloud</button>
+                   <br>
+                   <br>
+                   {% endif %} -->
+                   <!-- {% if messages %}              
+                    {% for message in messages %}
+                      <div class="alert alert-success">{{message}}</div>
+                    {% endfor %}               
+                {% endif %}
+
+                
+          </form> -->
+
+
+
+
+        </div>
+
+{% endblock %}
