@@ -1,5 +1,8 @@
 import React,{Component} from 'react';
 
+import {Button,ButtonToolbar} from 'react-bootstrap';
+import {AddFoodModal} from './AddFoodModal';
+
 export class Food extends Component{
 
     constructor(props){
