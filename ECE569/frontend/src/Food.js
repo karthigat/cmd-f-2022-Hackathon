@@ -12,7 +12,7 @@ export class Food extends Component{
 
     refreshList(){ 
         fetch("http://localhost:8000/api/get_recipes")
-        .then(response=>Rrsponse.json())
+        .then(response=>Response.json())
         .then(date=>{
             this.setState({foods: data});
         })
@@ -36,15 +36,17 @@ export class Food extends Component{
                 <tr>FoodName</tr>
                 <tr>FoodQuantity</tr>
                 <tr>DatePurchased</tr>
+                <tr>ExpiryDate</tr>
                 <tr>Options</tr>
             </thead>
             <tbody>
                 {foods.map(food=>
                      <tr key={food.foodName}>
+                        <td>{food.foodName}</td>
                         <td>{food.foodQuantity}</td>
                         <td>{food.datePurchased}</td>
+                        <td>{food.expiryDate}</td>
                         <td>Edit / Delete</td>
-
                     </tr>)}
             </tbody>
 

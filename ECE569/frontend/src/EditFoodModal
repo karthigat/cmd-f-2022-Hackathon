@@ -59,7 +59,7 @@ centered
                                 Change Food Quantity
                             </Button>
                         </Form.Group>
-                        
+
                     </Form>
                 </Col>
             </Row>
