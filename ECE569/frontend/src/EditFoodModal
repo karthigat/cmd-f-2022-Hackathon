@@ -18,7 +18,8 @@ export class EditFoodModal extends Component{
             body:JSON.stringify({
                 FoodID:event.target.FoodID.value,
                 FoodName:event.target.FoodName.value,
-                
+                FoodDatePurchased:event.target.FoodDatePurchased.value,
+                FoodQuantity:event.target.FoodQuantity.value
             })
         })
         .then(res=>res.json())
@@ -47,17 +48,18 @@ centered
             <Row>
                 <Col sm={6}>
                     <Form onSubmit={this.handleSubmit}>
-                        <Form.Group controlID="FoodName">
+                        <Form.Group controlID="FoodQuantity">
                             <Form.Label>FoodName</Form.Label>
-                            <Form.Control type="text" name="FoodName" required
-                            placeholder="FoodName"/>
+                            <Form.Control type="text" name="FoodQuantity" required
+                            placeholder="FoodQuantity"/>
                         </Form.Group>
 
                         <Form.Group>
                             <Button variant="primary" type="submit">
-                                Add Food
+                                Change Food Quantity
                             </Button>
                         </Form.Group>
+                        
                     </Form>
                 </Col>
             </Row>

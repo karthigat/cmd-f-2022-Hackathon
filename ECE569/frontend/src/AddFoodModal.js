@@ -19,7 +19,7 @@ export class AddFoodModal extends Component{
                 FoodID:null,
                 FoodName:event.target.FoodName.value,
                 FoodDatePurchased:event.target.FoodDatePurchased.value,
-                FoodQuantity:event.target.FoodQuantity
+                FoodQuantity:event.target.FoodQuantity.value
             })
         })
         .then(res=>res.json())
